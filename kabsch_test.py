@@ -1,14 +1,15 @@
+#python3
 
 def rigid_transform(A, B, scaling):
-	assert len(A) == len(B)
+    assert len(A) == len(B)
 
-	N = A.shape[0]
+    N = A.shape[0]
 
-	# Bring points to 0
-	centroid_A = np.mean(A, axis =0)
-	centroid_B = np.mean(B, axis=0)
+    # Bring points to 0
+    centroid_A = np.mean(A, axis =0)
+    centroid_B = np.mean(B, axis=0)
 
-	AA = A - np.tile(centroid_A, (N, 1))
+    AA = A - np.tile(centroid_A, (N, 1))
     BB = B - np.tile(centroid_B, (N, 1))
 
     # Find the cross covariance matrix
